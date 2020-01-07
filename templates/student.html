@@ -1,0 +1,53 @@
+<html>
+   <body>
+      <form name="myForm" action = "{{ url_for('add_rec') }}" method = "POST" onsubmit="return validateForm()">
+         <h3>User Information</h3>
+         Name<br>
+         <input type = "text" name = "nm" /></br>
+         
+         Password<br>
+         <input type="password" name = "pass" ></textarea><br>
+         
+         Re_enter Password<br>
+         <input type = "password" name = "re_pass" /><br>
+         
+         
+         <input class="button" type = "submit" value = "submit" /><br>
+      </form>
+<style>
+ .button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}    
+</style>
+      <script>
+	function validateForm() {
+  	var x = document.forms["myForm"]["nm"].value;
+	var y =document.forms["myForm"]["pass"].value;
+	var z =document.forms["myForm"]["re_pass"].value;
+ 
+  	if (x == "") {
+   		 alert("Name must be filled out");
+    	return false;
+  	}
+	if (y== "") {
+   		 alert("Name must be filled out");
+    	return false;
+  	}
+	if (z == "") {
+   		 alert("Name must be filled out");
+    	return false;
+  	}
+        if(y!=z){
+              alert("Password Not matching");
+	}
+	} 
+      </script>
+   </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <style>
+       div.a{
+     font-size:large;
+
+}
+div.b{
+font-size:large;
+}
+    </style> 
+<style>
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 9px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+   <form action="{{ url_for('show_index') }}" method="POST">
+   <div><h1 align="center">Malayalam Caption Correction Tool</h1>
+   </div>
+<div align="right">
+<a href="{{ url_for('register') }}" class="btn btn-info btn-lg" >
+          <span class="glyphicon glyphicon-log-out"> </span>Log out
+        </a>
+</div>
+    <div>
+    <img src="{{ user_image }}" alt="User Image" align="center" width=275 height=275>
+    </div>
+    <div class="a">
+    <label for="eng_caption">English Caption:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    &nbsp<label for="caption">{{eng_caption}}</label>
+     </div>
+     <div>
+    </div>
+    <div class="b">
+    <label for="mal_caption">Malayalam Caption:</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label for="malayalam_caption">{{mal_caption}}</label>
+    </div>
+    <div>
+    <label for="malcorC">Malayalam Caption to be corrected</label>
+    <input type="hidden" name="image_id" value="{{image_id}}" />
+    <textarea rows="2" cols="100" name="corre_caption"></textarea>
+    <label for='caption_id'>{{caption_id}}</label>
+    <input class="button" type="submit" value="Submit"  align="center">
+        <button class="button1" type="submit" onclick="reload_function()">Skip</button>
+<p id="demo"></p>
+    </div>
+    </form>
+<script type="text/javascript">
+function reload_function() {
+  document.getElementById("demo").innerHTML = " skipping the image";
+}
+// function logout(btn1)
+//{
+ //window.location.replace("register.html");
+//}
+</script>
+</body>
+</html>
